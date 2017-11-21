@@ -6,32 +6,7 @@ git submodule update --recursive
 
 # (cd awfy && ./implementations/setup.sh)
 
-# rebench -f "${PARAMS[@]}" codespeed.conf all vm:Node
-# rebench -f "${PARAMS[@]}" codespeed.conf steady-java
-# rebench -f "${PARAMS[@]}" codespeed.conf steady-crystal
-
-# rebench -f "${PARAMS[@]}" codespeed.conf lua
-
-rebench -f "${PARAMS[@]}" codespeed.conf all vm:GraalBasic vm:GraalC2 vm:SOMns
-# rebench -f "${PARAMS[@]}" codespeed.conf all vm:SOMns-Enterprise vm:GraalEnterprise vm:JRubyTruffleEnterprise vm:GraalJS
-# rebench -f "${PARAMS[@]}" codespeed.conf all vm:JRubyGraal vm:JRubyTruffle
-# rebench -f "${PARAMS[@]}" codespeed.conf all vm:TruffleSOM vm:TruffleSOM-TOM
-# rebench -f "${PARAMS[@]}" codespeed.conf all vm:SOMns
-
-# rebench -f "${PARAMS[@]}" codespeed.conf all vm:GraalEnterprise vm:GraalJS
-
-# vm:Crystal vm:Node vm:RSqueak vm:Topaz
-# rebench -f "${PARAMS[@]}" codespeed.conf all vm:SOMnsInt
-# rebench -f "${PARAMS[@]}" codespeed.conf all vm:SOMns
-
-# rebench -f "${PARAMS[@]}" codespeed.conf all vm:LuaJIT2
-# rebench -f "${PARAMS[@]}" codespeed.conf all vm:SOM
-# rebench -f "${PARAMS[@]}" codespeed.conf all vm:RTruffleSOM vm:RTruffleSOMInt
-
-# rebench -f "${PARAMS[@]}" codespeed.conf all vm:TruffleSOM-TOM
-# rebench -f "${PARAMS[@]}" codespeed.conf all vm:SOMppOMR
-# rebench -f "${PARAMS[@]}" codespeed.conf all vm:SOMpp
-# rebench -f "${PARAMS[@]}" codespeed.conf all vm:Java8U66  vm:JavaInt
+rebench -f "${PARAMS[@]}" codespeed.conf fj-java
 
 
 DATA_ROOT=~/benchmark-results/are-we-fast-yet
