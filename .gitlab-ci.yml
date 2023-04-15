@@ -10,11 +10,17 @@ variables:
   executors: &EXECUTORS |
     export EXECUTORS=(
       # e:Java-native
-      #
-      e:Java-int
-      e:Java-C2-jit
-      # e:Java8-int
-      # e:Java8-C2-jit
+
+      e:Java-OpenJDK-17-int
+      e:Java-OpenJDK-8-int
+      e:Java-Temurin-20-int
+      e:Java-Temurin-17-int
+      e:Java-Temurin-8-int
+      e:Java-OpenJDK-17-jit
+      e:Java-OpenJDK-8-jit
+      e:Java-Temurin-20-jit
+      e:Java-Temurin-17-jit
+      e:Java-Temurin-8-jit
 
       # e:CSOM-int
       # e:SOMpp-int
