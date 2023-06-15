@@ -11,16 +11,16 @@ variables:
     export EXECUTORS=(
       # e:Java-native
 
-      e:Java-OpenJDK-17-int
-      e:Java-OpenJDK-8-int
-      e:Java-Temurin-20-int
-      e:Java-Temurin-17-int
-      e:Java-Temurin-8-int
-      e:Java-OpenJDK-17-jit
-      e:Java-OpenJDK-8-jit
-      e:Java-Temurin-20-jit
-      e:Java-Temurin-17-jit
-      e:Java-Temurin-8-jit
+      # e:Java-OpenJDK-17-int
+      # e:Java-OpenJDK-8-int
+      # e:Java-Temurin-20-int
+      # e:Java-Temurin-17-int
+      # e:Java-Temurin-8-int
+      # e:Java-OpenJDK-17-jit
+      # e:Java-OpenJDK-8-jit
+      # e:Java-Temurin-20-jit
+      # e:Java-Temurin-17-jit
+      # e:Java-Temurin-8-jit
 
       # e:CSOM-int
       # e:SOMpp-int
@@ -44,8 +44,10 @@ variables:
       # e:PySOM-bc-jit
       # e:PySOM-bc-int
       #
-      # e:Node-int
-      # e:Node-jit
+      e:Node-int
+      e:Node-jit
+      e:Bun-int
+      e:Bun-jit
       # e:GraalJS-HotspotEE-jit
       # e:GraalJS-NativeEE-int
       #
