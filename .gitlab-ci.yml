@@ -76,14 +76,14 @@ variables:
 before_script:
   - git submodule update --init --recursive
 
-build-y1:
-  stage: build
-  tags: [yuria]
-  script:
-    - *EXECUTORS
-    - *PARAMS_BUILD
-    - cp -r scripts ~/.local/
-    - rebench $PARAMS codespeed.conf all "${EXECUTORS[@]}" s:*:List
+# build-y1:
+#   stage: build
+#   tags: [yuria]
+#   script:
+#     - *EXECUTORS
+#     - *PARAMS_BUILD
+#     - cp -r scripts ~/.local/
+#     - rebench $PARAMS codespeed.conf all "${EXECUTORS[@]}" s:*:List
 
 build-y2:
   stage: build
@@ -106,8 +106,8 @@ build-y3:
 
 deltablue:
   stage: benchmark
-  needs: ["build-y1"]
-  tags: [yuria]
+  needs: ["build-y2"]
+  tags: [yuria2]
   script:
     - *EXECUTORS
     - *PARAMS_RUN
@@ -133,8 +133,8 @@ json:
 
 cd:
   stage: benchmark
-  needs: ["build-y1"]
-  tags: [yuria]
+  needs: ["build-y3"]
+  tags: [yuria3]
   script:
     - *EXECUTORS
     - *PARAMS_RUN
@@ -160,8 +160,8 @@ bounce:
 
 list:
   stage: benchmark
-  needs: ["build-y1"]
-  tags: [yuria]
+  needs: ["build-y2"]
+  tags: [yuria2]
   script:
     - *EXECUTORS
     - *PARAMS_RUN
@@ -187,8 +187,8 @@ nbody:
 
 permute:
   stage: benchmark
-  needs: ["build-y1"]
-  tags: [yuria]
+  needs: ["build-y3"]
+  tags: [yuria3]
   script:
     - *EXECUTORS
     - *PARAMS_RUN
@@ -214,8 +214,8 @@ sieve:
 
 storage:
   stage: benchmark
-  needs: ["build-y1"]
-  tags: [yuria]
+  needs: ["build-y2"]
+  tags: [yuria2]
   script:
     - *EXECUTORS
     - *PARAMS_RUN
@@ -232,6 +232,6 @@ towers:
 
 report-completion:
   stage: benchmark-completion
-  tags: [yuria]
+  tags: [yuria3]
   script:
     - rebench --experiment="CI ID $CI_PIPELINE_ID" --report-completion codespeed.conf
