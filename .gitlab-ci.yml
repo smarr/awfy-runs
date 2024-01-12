@@ -61,7 +61,9 @@ variables:
       # e:CRuby-y-jit
       # e:TruffleRuby-HotspotEE-jit
       # e:TruffleRuby-NativeEE-int
-      
+
+      e:C++-Clang
+      e:C++-GCC
       e:C++HJ-Clang
       e:C++HJ-GCC
       e:C++RK-Clang
