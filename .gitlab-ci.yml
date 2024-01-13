@@ -62,8 +62,16 @@ variables:
       # e:TruffleRuby-HotspotEE-jit
       # e:TruffleRuby-NativeEE-int
 
-      e:C++-Clang
-      e:C++-GCC
+      e:C++-Clang-O3-lto-pgo
+      e:C++-Clang-O3-lto
+      e:C++-Clang-O3
+      e:C++-Clang-O2
+      
+      e:C++-GCC-O3-lto-pgo
+      e:C++-GCC-O3-lto
+      e:C++-GCC-O3
+      e:C++-GCC-O2
+      
       e:C++HJ-Clang
       e:C++HJ-GCC
       e:C++RK-Clang
