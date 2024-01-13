@@ -9,18 +9,16 @@ variables:
 .benchmark-settings:
   executors: &EXECUTORS |
     export EXECUTORS=(
-      # e:Java-native
+      e:Java-native
+      e:Java-native-pgo
 
-      # e:Java-OpenJDK-17-int
-      # e:Java-OpenJDK-8-int
-      # e:Java-Temurin-20-int
-      # e:Java-Temurin-17-int
-      # e:Java-Temurin-8-int
-      # e:Java-OpenJDK-17-jit
-      # e:Java-OpenJDK-8-jit
-      # e:Java-Temurin-20-jit
-      # e:Java-Temurin-17-jit
-      # e:Java-Temurin-8-jit
+      e:Java-Temurin-21-int
+      e:Java-Temurin-17-int
+      e:Java-Temurin-8-int
+      e:Java-Temurin-21-jit
+      e:Java-Temurin-17-jit
+      e:Java-Temurin-8-jit
+      e:GraalVM-21-jit
 
       # e:CSOM-int
       # e:SOMpp-int
@@ -62,20 +60,20 @@ variables:
       # e:TruffleRuby-HotspotEE-jit
       # e:TruffleRuby-NativeEE-int
 
-      e:C++-Clang-O3-lto-pgo
-      e:C++-Clang-O3-lto
-      e:C++-Clang-O3
-      e:C++-Clang-O2
-      
-      e:C++-GCC-O3-lto-pgo
-      e:C++-GCC-O3-lto
-      e:C++-GCC-O3
-      e:C++-GCC-O2
-      
-      e:C++HJ-Clang
-      e:C++HJ-GCC
-      e:C++RK-Clang
-      e:C++RK-GCC
+      # e:C++-Clang-O3-lto-pgo
+      # e:C++-Clang-O3-lto
+      # e:C++-Clang-O3
+      # e:C++-Clang-O2
+      #
+      # e:C++-GCC-O3-lto-pgo
+      # e:C++-GCC-O3-lto
+      # e:C++-GCC-O3
+      # e:C++-GCC-O2
+      #
+      # e:C++HJ-Clang
+      # e:C++HJ-GCC
+      # e:C++RK-Clang
+      # e:C++RK-GCC
     )
   params-build: &PARAMS_BUILD export PARAMS="-d -v -f --setup-only --disable-data-reporting"
   params-run:   &PARAMS_RUN   export PARAMS="-f --without-building"
