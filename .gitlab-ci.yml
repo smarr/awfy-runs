@@ -9,22 +9,22 @@ variables:
 .benchmark-settings:
   executors: &EXECUTORS |
     export EXECUTORS=(
-      e:Java-native
-      e:Java-native-pgo
-
-      e:Java-Temurin-21-int
-      e:Java-Temurin-17-int
-      e:Java-Temurin-8-int
-      e:Java-Temurin-21-jit
-      e:Java-Temurin-17-jit
-      e:Java-Temurin-8-jit
-      e:GraalVM-21-jit
+      # e:Java-native
+      # e:Java-native-pgo
+      #
+      # e:Java-Temurin-21-int
+      # e:Java-Temurin-17-int
+      # e:Java-Temurin-8-int
+      # e:Java-Temurin-21-jit
+      # e:Java-Temurin-17-jit
+      # e:Java-Temurin-8-jit
+      # e:GraalVM-21-jit
 
       # e:CSOM-int
       # e:SOMpp-int
-      # e:SOM-RS-ast-int
-      # e:SOM-RS-bc-int
-      # e:ykSOM-int
+      e:SOM-RS-ast-int
+      e:SOM-RS-bc-int
+      e:ykSOM-int
 
       # e:TruffleSOM-ast-HotspotCE-jit-main
       # e:TruffleSOM-ast-HotspotEE-jit-main
@@ -44,8 +44,8 @@ variables:
       #
       # e:Node-int
       # e:Node-jit
-      # e:Bun-int
-      # e:Bun-jit
+      e:Bun-int
+      e:Bun-jit
       # e:GraalJS-HotspotEE-jit
       # e:GraalJS-NativeEE-int
       #
@@ -54,11 +54,17 @@ variables:
       # e:PyPy-int
       # e:GraalPython-HotspotEE-jit
       # e:GraalPython-NativeEE-int
-      #
-      # e:CRuby-int
-      # e:CRuby-y-jit
+
+      e:Crystal
+
+      e:CRuby-int
+      e:CRuby-y-jit
       # e:TruffleRuby-HotspotEE-jit
       # e:TruffleRuby-NativeEE-int
+
+      e:Lua53-int
+      e:Lua54-int
+      e:LuaJIT21-jit
 
       # e:C++-Clang-O3-lto-pgo
       # e:C++-Clang-O3-lto
