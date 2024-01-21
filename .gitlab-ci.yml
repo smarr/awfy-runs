@@ -121,7 +121,7 @@ build-y3:
 deltablue:
   stage: benchmark
   needs: ["build-y1"]
-  tags: [yuria2]
+  tags: [yuria]
   script:
     - *EXECUTORS
     - *PARAMS_RUN
@@ -148,7 +148,7 @@ json:
 cd:
   stage: benchmark
   needs: ["build-y1"]
-  tags: [yuria3]
+  tags: [yuria]
   script:
     - *EXECUTORS
     - *PARAMS_RUN
@@ -175,7 +175,7 @@ bounce:
 list:
   stage: benchmark
   needs: ["build-y1"]
-  tags: [yuria2]
+  tags: [yuria]
   script:
     - *EXECUTORS
     - *PARAMS_RUN
@@ -184,7 +184,7 @@ list:
 mandelbrot:
   stage: benchmark
   needs: ["build-y2"]
-  tags: [yuria3]
+  tags: [yuria2]
   script:
     - *EXECUTORS
     - *PARAMS_RUN
@@ -202,7 +202,7 @@ nbody:
 permute:
   stage: benchmark
   needs: ["build-y1"]
-  tags: [yuria3]
+  tags: [yuria]
   script:
     - *EXECUTORS
     - *PARAMS_RUN
@@ -229,7 +229,7 @@ sieve:
 storage:
   stage: benchmark
   needs: ["build-y1"]
-  tags: [yuria2]
+  tags: [yuria]
   script:
     - *EXECUTORS
     - *PARAMS_RUN
