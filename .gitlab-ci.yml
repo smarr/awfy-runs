@@ -45,8 +45,8 @@ variables:
       # e:Node-int
       # e:Node-jit
       
-      e:Bun-int
-      e:Bun-jit
+      # e:Bun-int
+      # e:Bun-jit
       
       # e:GraalJS-HotspotEE-jit
       # e:GraalJS-NativeEE-int
@@ -57,31 +57,34 @@ variables:
       # e:GraalPython-HotspotEE-jit
       # e:GraalPython-NativeEE-int
 
-      e:Crystal
+      # e:Crystal
 
-      e:CRuby-int
-      e:CRuby-y-jit
+      # e:CRuby-int
+      # e:CRuby-y-jit
       # e:TruffleRuby-HotspotEE-jit
       # e:TruffleRuby-NativeEE-int
 
-      e:Lua53-int
-      e:Lua54-int
-      e:LuaJIT21-jit
+      # e:Lua53-int
+      # e:Lua54-int
+      # e:LuaJIT21-jit
 
-      # e:C++-Clang-O3-lto-pgo
-      # e:C++-Clang-O3-lto
-      # e:C++-Clang-O3
-      # e:C++-Clang-O2
-      #
-      # e:C++-GCC-O3-lto-pgo
-      # e:C++-GCC-O3-lto
-      # e:C++-GCC-O3
-      # e:C++-GCC-O2
-      #
-      # e:C++HJ-Clang
-      # e:C++HJ-GCC
-      # e:C++RK-Clang
-      # e:C++RK-GCC
+      e:C++-Clang-O3-lto-pgo-generic
+      e:C++-Clang-O3-lto-pgo
+      e:C++-Clang-O3-lto
+      e:C++-Clang-O3
+      e:C++-Clang-O2
+
+      e:C++-GCC-O3-lto-pgo-generic
+      e:C++-GCC-O3-lto-pgo
+      e:C++-GCC-O3-lto
+      e:C++-GCC-O3
+      e:C++-GCC-O3-generic
+      e:C++-GCC-O2
+
+      e:C++HJ-Clang
+      e:C++HJ-GCC
+      e:C++RK-Clang
+      e:C++RK-GCC
     )
   params-build: &PARAMS_BUILD export PARAMS="-d -v -f --setup-only --disable-data-reporting"
   params-run:   &PARAMS_RUN   export PARAMS="-f --without-building"
