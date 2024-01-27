@@ -22,9 +22,9 @@ variables:
       #
       # e:CSOM-int
       # e:SOMpp-int
-      e:SOM-RS-ast-int
-      e:SOM-RS-bc-int
-      e:ykSOM-int
+      # e:SOM-RS-ast-int
+      # e:SOM-RS-bc-int
+      # e:ykSOM-int
 
       # e:TruffleSOM-ast-HotspotCE-jit-main
       # e:TruffleSOM-ast-HotspotEE-jit-main
@@ -48,14 +48,14 @@ variables:
       # e:Bun-int
       # e:Bun-jit
       
-      # e:GraalJS-HotspotEE-jit
-      # e:GraalJS-NativeEE-int
+      e:GraalJS-HotspotEE-jit
+      e:GraalJS-NativeEE-int
       #
       # e:CPython-int
       # e:CPython313-int
       # e:PyPy-jit
       # e:PyPy-int
-      # e:GraalPython-HotspotEE-jit
+      e:GraalPython-HotspotEE-jit
       # e:GraalPython-NativeEE-int
 
       # e:Crystal
