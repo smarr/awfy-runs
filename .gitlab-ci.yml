@@ -48,14 +48,14 @@ variables:
       # e:Bun-int
       # e:Bun-jit
       
-      e:GraalJS-HotspotEE-jit
-      e:GraalJS-NativeEE-int
+      # e:GraalJS-HotspotEE-jit
+      # e:GraalJS-NativeEE-int
       #
       # e:CPython-int
       # e:CPython313-int
       # e:PyPy-jit
       # e:PyPy-int
-      e:GraalPython-HotspotEE-jit
+      # e:GraalPython-HotspotEE-jit
       # e:GraalPython-NativeEE-int
 
       # e:Crystal
@@ -68,6 +68,8 @@ variables:
       # e:Lua53-int
       # e:Lua54-int
       # e:LuaJIT21-jit
+      
+      e:Pharo
 
       # e:C++-Clang-O3-lto-pgo-generic
       # e:C++-GCC-O3-lto-pgo-generic
