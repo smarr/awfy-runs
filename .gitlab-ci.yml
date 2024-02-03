@@ -70,6 +70,7 @@ variables:
       # e:LuaJIT21-jit
       
       e:Pharo
+      e:Squeak
 
       # e:C++-Clang-O3-lto-pgo-generic
       # e:C++-GCC-O3-lto-pgo-generic
