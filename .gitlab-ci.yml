@@ -27,12 +27,12 @@ variables:
       # e:ykSOM-int
 
       e:TruffleSOM-ast-HotspotCE-jit-main
-      e:TruffleSOM-ast-HotspotEE-jit-main
+      # e:TruffleSOM-ast-HotspotEE-jit-main
       # e:TruffleSOM-ast-NativeEE-int-main
       e:TruffleSOM-ast-NativeCE-int-main
       #
       e:TruffleSOM-bc-HotspotCE-jit-main
-      e:TruffleSOM-bc-HotspotEE-jit-main
+      # e:TruffleSOM-bc-HotspotEE-jit-main
       # e:TruffleSOM-bc-NativeEE-int-main
       e:TruffleSOM-bc-NativeCE-int-main
 
