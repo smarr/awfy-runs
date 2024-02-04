@@ -26,21 +26,23 @@ variables:
       # e:SOM-RS-bc-int
       # e:ykSOM-int
 
-      # e:TruffleSOM-ast-HotspotCE-jit-main
-      # e:TruffleSOM-ast-HotspotEE-jit-main
+      e:TruffleSOM-ast-HotspotCE-jit-main
+      e:TruffleSOM-ast-HotspotEE-jit-main
       # e:TruffleSOM-ast-NativeEE-int-main
+      e:TruffleSOM-ast-NativeCE-int-main
       #
-      # e:TruffleSOM-bc-HotspotCE-jit-main
-      # e:TruffleSOM-bc-HotspotEE-jit-main
+      e:TruffleSOM-bc-HotspotCE-jit-main
+      e:TruffleSOM-bc-HotspotEE-jit-main
       # e:TruffleSOM-bc-NativeEE-int-main
+      e:TruffleSOM-bc-NativeCE-int-main
 
       # e:TruffleSOM-ast-NativeEE-int-uber
       # e:TruffleSOM-ast-NativeEE-int-super
 
-      e:PySOM-ast-jit
-      e:PySOM-ast-int
-      e:PySOM-bc-jit
-      e:PySOM-bc-int
+      # e:PySOM-ast-jit
+      # e:PySOM-ast-int
+      # e:PySOM-bc-jit
+      # e:PySOM-bc-int
 
       # e:Node-int
       # e:Node-jit
@@ -68,7 +70,7 @@ variables:
       # e:Lua53-int
       # e:Lua54-int
       # e:LuaJIT21-jit
-      e:LuaJIT21-int
+      # e:LuaJIT21-int
       
       # e:Pharo
       # e:Squeak
