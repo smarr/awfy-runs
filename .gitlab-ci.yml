@@ -68,9 +68,10 @@ variables:
       # e:Lua53-int
       # e:Lua54-int
       # e:LuaJIT21-jit
+      e:LuaJIT21-int
       
-      e:Pharo
-      e:Squeak
+      # e:Pharo
+      # e:Squeak
 
       # e:C++-Clang-O3-lto-pgo-generic
       # e:C++-GCC-O3-lto-pgo-generic
