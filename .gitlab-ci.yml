@@ -1,8 +1,3 @@
-stages:
-  - build
-  - benchmark
-  - benchmark-completion
-
 variables:
   PYTHONUNBUFFERED: "true"
 
@@ -13,18 +8,18 @@ variables:
       e:Java-native-pgo
 
       e:Java-Temurin-21-int
-      e:Java-Temurin-17-int
-      e:Java-Temurin-8-int
+      # e:Java-Temurin-17-int
+      # e:Java-Temurin-8-int
       e:Java-Temurin-21-jit
-      e:Java-Temurin-17-jit
-      e:Java-Temurin-8-jit
+      # e:Java-Temurin-17-jit
+      # e:Java-Temurin-8-jit
       e:GraalVM-21-jit
      
       # e:CSOM-int
       # e:SOMpp-int
-      e:SOM-RS-ast-int
-      e:SOM-RS-bc-int
-      e:ykSOM-int
+      # e:SOM-RS-ast-int
+      # e:SOM-RS-bc-int
+      # e:ykSOM-int
 
       e:TruffleSOM-ast-HotspotCE-jit-main
       # e:TruffleSOM-ast-HotspotEE-jit-main
@@ -102,7 +97,6 @@ before_script:
   - git submodule update --init --recursive
 
 build-y1:
-  stage: build
   tags: [yuria]
   script:
     - *EXECUTORS
@@ -111,7 +105,6 @@ build-y1:
     - rebench $PARAMS codespeed.conf all "${EXECUTORS[@]}" s:*:List
 
 build-y2:
-  stage: build
   tags: [yuria2]
   script:
     - *EXECUTORS
@@ -120,7 +113,6 @@ build-y2:
     - rebench $PARAMS codespeed.conf all "${EXECUTORS[@]}" s:*:List
 
 build-y3:
-  stage: build
   tags: [yuria3]
   script:
     - *EXECUTORS
@@ -130,7 +122,6 @@ build-y3:
 
 
 deltablue:
-  stage: benchmark
   needs: ["build-y1"]
   tags: [yuria]
   script:
@@ -139,7 +130,6 @@ deltablue:
     - rebench $PARAMS --experiment="CI ID $CI_PIPELINE_ID" --branch="$CI_COMMIT_REF_NAME" codespeed.conf all "${EXECUTORS[@]}" s:*:DeltaBlue
 
 richards:
-  stage: benchmark
   needs: ["build-y2"]
   tags: [yuria2]
   script:
@@ -148,7 +138,6 @@ richards:
     - rebench $PARAMS --experiment="CI ID $CI_PIPELINE_ID" --branch="$CI_COMMIT_REF_NAME" codespeed.conf all "${EXECUTORS[@]}" s:*:Richards
 
 json:
-  stage: benchmark
   needs: ["build-y3"]
   tags: [yuria3]
   script:
@@ -157,7 +146,6 @@ json:
     - rebench $PARAMS --experiment="CI ID $CI_PIPELINE_ID" --branch="$CI_COMMIT_REF_NAME" codespeed.conf all "${EXECUTORS[@]}" s:*:Json
 
 cd:
-  stage: benchmark
   needs: ["build-y1"]
   tags: [yuria]
   script:
@@ -166,7 +154,6 @@ cd:
     - rebench $PARAMS --experiment="CI ID $CI_PIPELINE_ID" --branch="$CI_COMMIT_REF_NAME" codespeed.conf all "${EXECUTORS[@]}" s:*:CD
 
 havlak:
-  stage: benchmark
   needs: ["build-y2"]
   tags: [yuria2]
   script:
@@ -175,7 +162,6 @@ havlak:
     - rebench $PARAMS --experiment="CI ID $CI_PIPELINE_ID" --branch="$CI_COMMIT_REF_NAME" codespeed.conf all "${EXECUTORS[@]}" s:*:Havlak
 
 bounce:
-  stage: benchmark
   needs: ["build-y3"]
   tags: [yuria3]
   script:
@@ -184,7 +170,6 @@ bounce:
     - rebench $PARAMS --experiment="CI ID $CI_PIPELINE_ID" --branch="$CI_COMMIT_REF_NAME" codespeed.conf all "${EXECUTORS[@]}" s:*:Bounce
 
 list:
-  stage: benchmark
   needs: ["build-y1"]
   tags: [yuria]
   script:
@@ -193,7 +178,6 @@ list:
     - rebench $PARAMS --experiment="CI ID $CI_PIPELINE_ID" --branch="$CI_COMMIT_REF_NAME" codespeed.conf all "${EXECUTORS[@]}" s:*:List
 
 mandelbrot:
-  stage: benchmark
   needs: ["build-y2"]
   tags: [yuria2]
   script:
@@ -202,7 +186,6 @@ mandelbrot:
     - rebench $PARAMS --experiment="CI ID $CI_PIPELINE_ID" --branch="$CI_COMMIT_REF_NAME" codespeed.conf all "${EXECUTORS[@]}" s:*:Mandelbrot
 
 nbody:
-  stage: benchmark
   needs: ["build-y3"]
   tags: [yuria3]
   script:
@@ -211,7 +194,6 @@ nbody:
     - rebench $PARAMS --experiment="CI ID $CI_PIPELINE_ID" --branch="$CI_COMMIT_REF_NAME" codespeed.conf all "${EXECUTORS[@]}" s:*:NBody
 
 permute:
-  stage: benchmark
   needs: ["build-y1"]
   tags: [yuria]
   script:
@@ -220,7 +202,6 @@ permute:
     - rebench $PARAMS --experiment="CI ID $CI_PIPELINE_ID" --branch="$CI_COMMIT_REF_NAME" codespeed.conf all "${EXECUTORS[@]}" s:*:Permute
 
 queens:
-  stage: benchmark
   needs: ["build-y2"]
   tags: [yuria2]
   script:
@@ -229,7 +210,6 @@ queens:
     - rebench $PARAMS --experiment="CI ID $CI_PIPELINE_ID" --branch="$CI_COMMIT_REF_NAME" codespeed.conf all "${EXECUTORS[@]}" s:*:Queens
 
 sieve:
-  stage: benchmark
   needs: ["build-y3"]
   tags: [yuria3]
   script:
@@ -238,7 +218,6 @@ sieve:
     - rebench $PARAMS --experiment="CI ID $CI_PIPELINE_ID" --branch="$CI_COMMIT_REF_NAME" codespeed.conf all "${EXECUTORS[@]}" s:*:Sieve
 
 storage:
-  stage: benchmark
   needs: ["build-y1"]
   tags: [yuria]
   script:
@@ -247,7 +226,6 @@ storage:
     - rebench $PARAMS --experiment="CI ID $CI_PIPELINE_ID" --branch="$CI_COMMIT_REF_NAME" codespeed.conf all "${EXECUTORS[@]}" s:*:Storage
 
 towers:
-  stage: benchmark
   needs: ["build-y3"]
   tags: [yuria3]
   script:
@@ -256,7 +234,7 @@ towers:
     - rebench $PARAMS --experiment="CI ID $CI_PIPELINE_ID" --branch="$CI_COMMIT_REF_NAME" codespeed.conf all "${EXECUTORS[@]}" s:*:Towers
 
 report-completion:
-  stage: benchmark-completion
+  needs: [deltablue, richards, json, cd, havlak, bounce, list, mandelbrot, nbody, permute, queens, sieve, storage, towers]
   tags: [yuria3]
   script:
     - rebench --experiment="CI ID $CI_PIPELINE_ID" --report-completion codespeed.conf
