@@ -4,94 +4,91 @@ variables:
 .benchmark-settings:
   executors: &EXECUTORS |
     export EXECUTORS=(
-      e:Java-native
-      e:Java-native-pgo
+      # e:Java-native
+      # e:Java-native-pgo
 
-      e:Java-Temurin-21-int
+      # e:Java-Temurin-21-int
       # e:Java-Temurin-17-int
       # e:Java-Temurin-8-int
-      e:Java-Temurin-21-jit
+      # e:Java-Temurin-21-jit
       # e:Java-Temurin-17-jit
       # e:Java-Temurin-8-jit
-      e:GraalVM-21-jit
-     
+      # e:GraalVM-21-jit
+
       # e:CSOM-int
-      # e:SOMpp-int
-      # e:SOM-RS-ast-int
-      # e:SOM-RS-bc-int
-      # e:ykSOM-int
+      e:SOMpp-int
+      e:PySOM-ast-int
+      e:PySOM-bc-int
+      e:SOM-RS-ast-int
+      e:SOM-RS-bc-int
+      e:ykSOM-int
+      e:TruffleSOM-ast-NativeEE-int-main
+      e:TruffleSOM-bc-NativeEE-int-main
 
       # e:TruffleSOM-ast-HotspotCE-jit-main
       # e:TruffleSOM-ast-HotspotEE-jit-main
-      # e:TruffleSOM-ast-NativeEE-int-main
       # e:TruffleSOM-ast-NativeCE-int-main
-
       # e:TruffleSOM-bc-HotspotCE-jit-main
       # e:TruffleSOM-bc-HotspotEE-jit-main
-      # e:TruffleSOM-bc-NativeEE-int-main
       # e:TruffleSOM-bc-NativeCE-int-main
-
       # e:TruffleSOM-ast-NativeEE-int-uber
       # e:TruffleSOM-ast-NativeEE-int-super
 
       # e:PySOM-ast-jit
-      # e:PySOM-ast-int
       # e:PySOM-bc-jit
-      # e:PySOM-bc-int
 
-      e:Node-int
-      e:Node-jit
+      # e:Node-int
+      # e:Node-jit
 
-      e:Bun-int
-      e:Bun-jit
-      
-      e:GraalJS-HotspotEE-jit
-      e:GraalJS-NativeEE-int
+      # e:Bun-int
+      # e:Bun-jit
 
-      e:CPython-int
-      e:CPython313-int
-      e:PyPy-jit
-      e:PyPy-int
-      e:GraalPython-HotspotEE-jit
-      e:GraalPython-NativeEE-int
+      # e:GraalJS-HotspotEE-jit
+      # e:GraalJS-NativeEE-int
 
-      e:Crystal
+      # e:CPython-int
+      # e:CPython313-int
+      # e:PyPy-jit
+      # e:PyPy-int
+      # e:GraalPython-HotspotEE-jit
+      # e:GraalPython-NativeEE-int
 
-      e:CRuby-int
-      e:CRuby-y-jit
-      e:TruffleRuby-HotspotEE-jit
-      e:TruffleRuby-NativeEE-int
+      # e:Crystal
 
-      e:Lua53-int
-      e:Lua54-int
-      e:LuaJIT21-jit
-      e:LuaJIT21-int
-      
-      e:Pharo
-      e:Squeak
+      # e:CRuby-int
+      # e:CRuby-y-jit
+      # e:TruffleRuby-HotspotEE-jit
+      # e:TruffleRuby-NativeEE-int
 
-      e:C++-Clang-O3-lto-pgo-generic
-      e:C++-GCC-O3-lto-pgo-generic
-      e:C++-GCC-O3-generic
+      # e:Lua53-int
+      # e:Lua54-int
+      # e:LuaJIT21-jit
+      # e:LuaJIT21-int
 
-      e:C++-Clang-O3-lto-pgo
-      e:C++-Clang-O3-lto
-      e:C++-Clang-O3
-      e:C++-Clang-O2
+      # e:Pharo
+      # e:Squeak
 
-      e:C++-GCC-O3-lto-pgo
-      e:C++-GCC-O3-lto
-      e:C++-GCC-O3
-      e:C++-GCC-O2
+      # e:C++-Clang-O3-lto-pgo-generic
+      # e:C++-GCC-O3-lto-pgo-generic
+      # e:C++-GCC-O3-generic
 
-      e:C++HJ-Clang
-      e:C++HJ-GCC
-      e:C++RK-Clang
-      e:C++RK-GCC
+      # e:C++-Clang-O3-lto-pgo
+      # e:C++-Clang-O3-lto
+      # e:C++-Clang-O3
+      # e:C++-Clang-O2
+
+      # e:C++-GCC-O3-lto-pgo
+      # e:C++-GCC-O3-lto
+      # e:C++-GCC-O3
+      # e:C++-GCC-O2
+
+      # e:C++HJ-Clang
+      # e:C++HJ-GCC
+      # e:C++RK-Clang
+      # e:C++RK-GCC
     )
   params-build: &PARAMS_BUILD export PARAMS="-d -v -f --setup-only --disable-data-reporting"
-  params-run:   &PARAMS_RUN   export PARAMS="-f --without-building"
-
+  params-run: &PARAMS_RUN export PARAMS="-f --without-building"
 
 before_script:
   - git submodule update --init --recursive
@@ -119,7 +116,6 @@ build-y3:
     - *PARAMS_BUILD
     - cp -r scripts ~/.local/
     - rebench $PARAMS codespeed.conf all "${EXECUTORS[@]}" s:*:List
-
 
 deltablue:
   needs: ["build-y1"]
@@ -234,7 +230,23 @@ towers:
     - rebench $PARAMS --experiment="CI ID $CI_PIPELINE_ID" --branch="$CI_COMMIT_REF_NAME" codespeed.conf all "${EXECUTORS[@]}" s:*:Towers
 
 report-completion:
-  needs: [deltablue, richards, json, cd, havlak, bounce, list, mandelbrot, nbody, permute, queens, sieve, storage, towers]
+  needs:
+    [
+      deltablue,
+      richards,
+      json,
+      cd,
+      havlak,
+      bounce,
+      list,
+      mandelbrot,
+      nbody,
+      permute,
+      queens,
+      sieve,
+      storage,
+      towers,
+    ]
   tags: [yuria3]
   script:
     - rebench --experiment="CI ID $CI_PIPELINE_ID" --report-completion codespeed.conf
