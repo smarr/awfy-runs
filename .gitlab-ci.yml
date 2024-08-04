@@ -228,25 +228,25 @@ towers:
     - *EXECUTORS
     - *PARAMS_RUN
     - rebench $PARAMS --experiment="CI ID $CI_PIPELINE_ID" --branch="$CI_COMMIT_REF_NAME" codespeed.conf all "${EXECUTORS[@]}" s:*:Towers
-
-report-completion:
-  needs:
-    [
-      deltablue,
-      richards,
-      json,
-      cd,
-      havlak,
-      bounce,
-      list,
-      mandelbrot,
-      nbody,
-      permute,
-      queens,
-      sieve,
-      storage,
-      towers,
-    ]
-  tags: [yuria3]
-  script:
-    - rebench --experiment="CI ID $CI_PIPELINE_ID" --report-completion codespeed.conf
+#
+# report-completion:
+#   needs:
+#     [
+#       deltablue,
+#       richards,
+#       json,
+#       cd,
+#       havlak,
+#       bounce,
+#       list,
+#       mandelbrot,
+#       nbody,
+#       permute,
+#       queens,
+#       sieve,
+#       storage,
+#       towers,
+#     ]
+#   tags: [yuria3]
+#   script:
+#     - rebench --experiment="CI ID $CI_PIPELINE_ID" --report-completion codespeed.conf
