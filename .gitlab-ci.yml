@@ -100,7 +100,6 @@ build-y1:
     - *EXECUTORS
     - *PARAMS_BUILD
     - ~/.asdf/bin/asdf plugin update --all
-    - sudo rebench-denoise restore
     - cp -r scripts ~/.local/
     - rebench $PARAMS codespeed.conf all "${EXECUTORS[@]}" s:*:List
 
@@ -110,7 +109,6 @@ build-y2:
     - *EXECUTORS
     - *PARAMS_BUILD
     - ~/.asdf/bin/asdf plugin update --all
-    - sudo rebench-denoise restore
     - cp -r scripts ~/.local/
     - rebench $PARAMS codespeed.conf all "${EXECUTORS[@]}" s:*:List
 
@@ -120,7 +118,6 @@ build-y3:
     - *EXECUTORS
     - *PARAMS_BUILD
     - ~/.asdf/bin/asdf plugin update --all
-    - sudo rebench-denoise restore
     - cp -r scripts ~/.local/
     - rebench $PARAMS codespeed.conf all "${EXECUTORS[@]}" s:*:List
 
