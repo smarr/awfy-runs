@@ -7,7 +7,7 @@ variables:
       # e:Java-native
       # e:Java-native-pgo
 
-      e:Java-Temurin-22-int
+      # e:Java-Temurin-22-int
 
       # e:Java-Temurin-17-int
       # e:Java-Temurin-8-int
@@ -38,17 +38,17 @@ variables:
       # e:PySOM-ast-jit
       # e:PySOM-bc-jit
 
-      e:Node-int
+      # e:Node-int
       # e:Node-jit
 
-      e:Bun-int
+      # e:Bun-int
       # e:Bun-jit
 
       # e:GraalJS-HotspotEE-jit
       # e:GraalJS-NativeEE-int
 
-      e:CPython313-int
-      e:CPython314-int
+      # e:CPython313-int
+      # e:CPython314-int
       # e:PyPy-jit
       # e:PyPy-int
       # e:GraalPython-HotspotEE-jit
@@ -56,15 +56,15 @@ variables:
 
       # e:Crystal
 
-      e:CRuby-int
+      # e:CRuby-int
       # e:CRuby-y-jit
       # e:TruffleRuby-HotspotEE-jit
       # e:TruffleRuby-NativeEE-int
 
       # e:Lua53-int
-      e:Lua54-int
+      # e:Lua54-int
       # e:LuaJIT21-jit
-      e:LuaJIT21-int
+      # e:LuaJIT21-int
 
       # e:Pharo
       # e:Squeak
