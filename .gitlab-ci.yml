@@ -18,13 +18,13 @@ variables:
 
       # e:CSOM-int
       e:SOMpp-int
-      # e:PySOM-ast-int
-      # e:PySOM-bc-int
+      e:PySOM-ast-int
+      e:PySOM-bc-int
       e:SOM-RS-ast-int
       e:SOM-RS-bc-int
       # e:ykSOM-int
-      # e:TruffleSOM-ast-NativeEE-int-main
-      # e:TruffleSOM-bc-NativeEE-int-main
+      e:TruffleSOM-ast-NativeEE-int-main
+      e:TruffleSOM-bc-NativeEE-int-main
 
       # e:TruffleSOM-ast-HotspotCE-jit-main
       # e:TruffleSOM-ast-HotspotEE-jit-main
