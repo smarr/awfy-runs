@@ -16,7 +16,7 @@ variables:
       # e:Java-Temurin-8-jit
       # e:GraalVM-21-jit
 
-      # e:CSOM-int
+      e:CSOM-int
 
       e:SOMpp-int
       e:PySOM-ast-int
@@ -26,19 +26,19 @@ variables:
       e:TruffleSOM-ast-NativeEE-int-main
       e:TruffleSOM-bc-NativeEE-int-main
 
-      # e:ykSOM-int
+      e:ykSOM-int
 
       # e:TruffleSOM-ast-HotspotCE-jit-main
-      # e:TruffleSOM-ast-HotspotEE-jit-main
+      e:TruffleSOM-ast-HotspotEE-jit-main
       # e:TruffleSOM-ast-NativeCE-int-main
       # e:TruffleSOM-bc-HotspotCE-jit-main
-      # e:TruffleSOM-bc-HotspotEE-jit-main
+      e:TruffleSOM-bc-HotspotEE-jit-main
       # e:TruffleSOM-bc-NativeCE-int-main
       # e:TruffleSOM-ast-NativeEE-int-uber
       # e:TruffleSOM-ast-NativeEE-int-super
 
-      # e:PySOM-ast-jit
-      # e:PySOM-bc-jit
+      e:PySOM-ast-jit
+      e:PySOM-bc-jit
 
       # e:Node-int
       # e:Node-jit
