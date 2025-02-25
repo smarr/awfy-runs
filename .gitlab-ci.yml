@@ -50,7 +50,7 @@ variables:
       # e:GraalJS-NativeEE-int
 
       # e:CPython313-int
-      # e:CPython314-int
+      e:CPython314-int
       # e:PyPy-jit
       # e:PyPy-int
       # e:GraalPython-HotspotEE-jit
@@ -58,7 +58,7 @@ variables:
 
       # e:Crystal
 
-      # e:CRuby-int
+      e:CRuby-int
       # e:CRuby-y-jit
       # e:TruffleRuby-HotspotEE-jit
       # e:TruffleRuby-NativeEE-int
