@@ -18,27 +18,27 @@ variables:
 
       # e:CSOM-int
 
-      e:SOMpp-int
-      e:PySOM-ast-int
-      e:PySOM-bc-int
-      e:SOM-RS-ast-int
-      e:SOM-RS-bc-int
-      e:TruffleSOM-ast-NativeEE-int-main
-      e:TruffleSOM-bc-NativeEE-int-main
+      # e:SOMpp-int
+      # e:PySOM-ast-int
+      # e:PySOM-bc-int
+      # e:SOM-RS-ast-int
+      # e:SOM-RS-bc-int
+      # e:TruffleSOM-ast-NativeEE-int-main
+      # e:TruffleSOM-bc-NativeEE-int-main
 
       # e:ykSOM-int
 
       # e:TruffleSOM-ast-HotspotCE-jit-main
-      e:TruffleSOM-ast-HotspotEE-jit-main
+      # e:TruffleSOM-ast-HotspotEE-jit-main
       # e:TruffleSOM-ast-NativeCE-int-main
       # e:TruffleSOM-bc-HotspotCE-jit-main
-      e:TruffleSOM-bc-HotspotEE-jit-main
+      # e:TruffleSOM-bc-HotspotEE-jit-main
       # e:TruffleSOM-bc-NativeCE-int-main
       # e:TruffleSOM-ast-NativeEE-int-uber
       # e:TruffleSOM-ast-NativeEE-int-super
 
-      e:PySOM-ast-jit
-      e:PySOM-bc-jit
+      # e:PySOM-ast-jit
+      # e:PySOM-bc-jit
 
       # e:Node-int
       # e:Node-jit
@@ -50,7 +50,20 @@ variables:
       # e:GraalJS-NativeEE-int
 
       # e:CPython313-int
+
+      e:CPython39-ub-int
+      e:CPython310-ub-int
+      e:CPython311-ub-int
+      e:CPython312-ub-int
+      e:CPython313-ub-int
+
+      e:CPython39-int
+      e:CPython310-int
+      e:CPython311-int
+      e:CPython312-int
+      e:CPython313-int
       e:CPython314-int
+
       # e:PyPy-jit
       # e:PyPy-int
       # e:GraalPython-HotspotEE-jit
@@ -58,7 +71,7 @@ variables:
 
       # e:Crystal
 
-      e:CRuby-int
+      # e:CRuby-int
       # e:CRuby-y-jit
       # e:TruffleRuby-HotspotEE-jit
       # e:TruffleRuby-NativeEE-int
