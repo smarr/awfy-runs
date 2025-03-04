@@ -21,8 +21,8 @@ variables:
       # e:SOMpp-int
       # e:PySOM-ast-int
       # e:PySOM-bc-int
-      # e:SOM-RS-ast-int
-      # e:SOM-RS-bc-int
+      e:SOM-RS-ast-int
+      e:SOM-RS-bc-int
       # e:TruffleSOM-ast-NativeEE-int-main
       # e:TruffleSOM-bc-NativeEE-int-main
 
